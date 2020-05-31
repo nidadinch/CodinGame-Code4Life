@@ -165,19 +165,19 @@ class Sample(_sampleId: Int,
     def setScore(health: Int): Unit = {
       this.score += health
     }
-
+// GoTo method for going to modules
     def GoTo(module: String): Unit = {
       println("GOTO " + module)
     }
-
+    
+// Take method for taking samples by using CONNECT
     def Take(s: Sample): Unit = {
       this.sample = s
       println("CONNECT " + s.sampleId)
     }
-
+    
+// TakeMolecules method for taking molecules that taken from Diagnosis module
     def TakeMolecules(): Unit = {
-
-
       for (i <- sample.costA to(0, -1)) {
         println("CONNECT " + "A")
       }
@@ -195,17 +195,19 @@ class Sample(_sampleId: Int,
       }
     }
 
+    // GiveMolecules method for CONNECT sample to laboratory
     def GiveMolecules(): Unit = {
       println("CONNECT " + sample.sampleId)
     }
 
-
-    def Update(): Unit = {}
-
-    // target.decision(this);
+    // Update method for updating target and making desicion by robot
+    def Update(): Unit = {
+      target.decision(this);
+    }
+     
 
   }
-
+// Project class for Wood1 league but i never reached
 class Project(var expertise: Array[Int])
 
 
@@ -217,16 +219,19 @@ class Project(var expertise: Array[Int])
     val projectCount = readLine.toInt
     for (i <- 0 until projectCount) {
       val Array(a, b, c, d, e) = (readLine split " ").map(_.toInt)
+      
+      // exp array takes a,b,c,d,e
       val exp = Array(a,b,c,d,e)
+      // projects list takes exp Array
       var projects: List[Project] = List(new Project((exp)))
-      var robots: List[Robot] = List()
+      
     }
 
     // game loop
     while (true) {
       var samplesTaken: Int = 0
-      var available = Array()
-      var samples: List[Sample] = List()
+      
+    
 
 
       for (i <- 0 until 2) {
@@ -243,20 +248,23 @@ class Project(var expertise: Array[Int])
         val expertiseC = _expertiseC.toInt
         val expertiseD = _expertiseD.toInt
         val expertiseE = _expertiseE.toInt
-
+        
+        // module target for taking target
         var moduleTarget: Module = null
-
-        /* target match {
+        
+        // loop for understanding what is the target
+         target match {
           case "START_POS" => moduleTarget = new StartPoint()
           case "DIAGNOSIS" => moduleTarget = new Diagnosis()
           case "MOLECULES" => moduleTarget = new Molecules()
           case "LABORATORY" => moduleTarget = new Laboratory()
-          case _ => //break
-
-        } */
+        } 
+        
+        //str and exp arrays for taking storages and expertises
         val str = Array(storageA, storageB, storageC, storageD, storageE)
         val exp = Array(expertiseA, expertiseB, expertiseC, expertiseD, expertiseE)
 
+        // robots list that takes exp and str arrays.
         var robots : List[Robot] = List(new Robot(str,exp, moduleTarget, score))
 
       }
@@ -266,6 +274,8 @@ class Project(var expertise: Array[Int])
       val sampleCount = readLine.toInt
       for (i <- 0 until sampleCount) {
         val Array(_sampleId, _carriedBy, _rank, expertiseGain, _health, _costA, _costB, _costC, _costD, _costE) = readLine split " "
+        
+        // Array for avalilable molecules
         val available = Array(availableA, availableB, availableC, availableD, availableE)
 
         val sampleId = _sampleId.toInt
@@ -278,17 +288,8 @@ class Project(var expertise: Array[Int])
         val costD = _costD.toInt
         val costE = _costE.toInt
 
-        var thisSample: Sample = new Sample(sampleId,
-          carriedBy,
-          expertiseGain,
-          health,
-          rank,
-          costA,
-          costB,
-          costC,
-          costD,
-          costE)
-
+     
+        // samples list for bring sample's data to samples list
         val samples: List[Sample] = List(new Sample(sampleId,
           carriedBy,
           expertiseGain,
@@ -307,10 +308,12 @@ class Project(var expertise: Array[Int])
 
         var s: Sample = null
         var id: Int = -1
+      
         for (e <- samples if e.carriedBy == -1) {
           id = e.sampleId
           s = e
         }
+      
       val robot: Robot = new Robot()
 
       // Write an action using println
@@ -321,6 +324,8 @@ class Project(var expertise: Array[Int])
       // robot.Take(s)
       // robot.TakeMolecules()
 
+      // Because of personal reasons, i started late for this project. First, i wrote my codes in Java for understanding the game
+      // But when i was trying to understand the game, i was late. So i didn't improve my project.
       
     }
 
