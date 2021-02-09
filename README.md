@@ -81,7 +81,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Nida Dinç - niddinc@gmail.com
 
-Project Link: [https://github.com/nidadinch/CPUemulator](https://github.com/nidadinch/CPUemulator)
+Project Link: [https://github.com/nidadinch/CodinGame-Code4Life](https://github.com/nidadinch/CodinGame-Code4Life)
 
   
 ### Türkçe:
