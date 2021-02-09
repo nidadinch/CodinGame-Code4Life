@@ -1,33 +1,10 @@
-## CodinGame-Code4Life
-### Nida Dinç - 20160808047
+#  CodinGame - Code4Life Contest & Hackathon
+
+## About The Project
 
 It is a project for Akdeniz University Computer Science Department - Programming Languages Lesson. 
-I started by writing the codes in java for understanding the game.Also you can find my Java codes in this repository.
-
 Here is my strategy:
 
-
-Oyunda daha fazla puan kazanabilmek için yapılması gereken 2 nokta var: 
-### 1.Sample'ın effective seçilmesi
-Oyuna ilk başladığımda, öncelikle sampleları ekrana yazdırdım. Sampleların özelliklerine baktığımda  bazı sampleların çok daha fazla moleküle istemesi ve bu sebepten costun çok artması dikkatimi çekti. Cost'a oranla verdiği health point'lerin bazı samplelarda çok düşük olduğunu gördüm. Bu sebepten öncelikle bir algoritma yazmaya karar verdim. Bu algoritma effectiveCost'u hesaplıyor. Sample'ın health / totalcost oranını alıyor, elimde effectiveCost ile tüm samplelar arasından öncelikle yüksek puan veren ve costu düşük olanları almayı düşündüm. Çünkü 50 adet sample'ın içinden öncelikli olarak bunları alırsak, daha az cost ile daha çok puan kazanılabilir. 
-
-### 2.Moleküllerin effective kullanımı
-Sonrasında molekülleri de ekrana yazdırdığımda şunu gördüm; her molekülden 99 adet var. Bu molekülleri olabildiğince efektif kullanmam gerektiğini farkettim. Çünkü sampleları effectiveCost ile aldığımızda, 10 adet sample'dan sonra örneğin, 
-
-#### 50 A , 40 B , 60 C, 99 D, 99 E 
-
-kaldığını varsayalım, eğer effectiveCost ile bu şekilde devam edersek sample almaya, sonunda elimizde şu gibi bir tablo kalabiliyor:
-
-#### 0 A, 2 B, 10 C, 80 D, 96 E 
-
-Eğer bu şekilde olursa kalan sampleların içinde eğer A molekülü isteyen bir sample varsa, o zaman sample'ı labda üretemeyiz. 
-Bunu çözmek için de günlük hayatta da ATM'lerde kullanılan bir algoritma aklıma geldi.Örneğin, ATM'ye gittiğimizde 500%L çekmek istersek hepsini 100TL olarak vermez. 3 x100 TL, 2x50 TL, 2x 20TL 1x10TL gibi bu parayı bölerek verir. Bunun sebebi de kalan nakit parayı efektif kullanabilmektir. Bu algoritmayı kendi kodumuza uyarlarsak, her zaman elimizdeki AvailbleA, Available B.... hepsinin oranına göre sample seçilmeli.
-
-
-Robot tek seferde 3 sample, 10 molekül taşıyabiliyor.Sample'lardan effectiveCost'u en yüksek olanların sayısı zaten az, bu yüzden ilk olarak onları alıp, robot labda ilk olarak onları işler. (3 sample, 10 molekül ardından laboratuar). Ardından tekrar kalan sample'ları 3e tamamlar, gerekli molekülleri alır ve tekrar işler. Sonrasında effectiveCost'u 1'den küçük olan sample'larda elimizde kalan availableA, Available B... oranına göre sıradan alır. 
-
-
----------------------------------------------------------------------------------------------------------------------------------------
 There are 2 points to be done to gain more points in the game:
 
 ### 1. Choosing effective samples
@@ -48,3 +25,83 @@ To solve this, an algorithm used in ATMs in our daily life came to my mind. For 
 
 
 The robot can carry 3 samples, 10 molecules at a time. The number of samples with the highest effectiveCost is already very little, so take them first and process them first in the robot lab. (3 samples, 10 molecules followed by laboratory). Then it completes the remaining samples to 3, takes the necessary molecules and processes them again. Then, the availableA, which we have in the samples that their effectiveCost are less than 1, takes the effectiveCost in the ordinary according to the Available B ... ratio.
+
+
+## Built With 
+
+* Java
+* Scala
+
+## Getting Started 
+
+* Java
+
+Your Java package must be installed to compile the project. After installing Java or already installed;
+
+1. ```sh
+   javac code4life.java 
+
+   ```
+2. ```sh
+   java code4life 
+
+   ```
+
+* Scala
+
+1. Matrix multiplication to multiply two matrices of size m×n and n×p to produce and print mxp result matrix:
+   ```sh
+   scalac code4life.scala
+
+   ```
+2. ```sh
+   scala code4life 
+
+   ```
+  
+   
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+## Contact
+
+Nida Dinç - niddinc@gmail.com
+
+Project Link: [https://github.com/nidadinch/CPUemulator](https://github.com/nidadinch/CPUemulator)
+
+  
+### Türkçe:
+
+Oyunda daha fazla puan kazanabilmek için yapılması gereken 2 nokta var: 
+### 1.Sample'ın effective seçilmesi
+Oyuna ilk başladığımda, öncelikle sampleları ekrana yazdırdım. Sampleların özelliklerine baktığımda  bazı sampleların çok daha fazla moleküle istemesi ve bu sebepten costun çok artması dikkatimi çekti. Cost'a oranla verdiği health point'lerin bazı samplelarda çok düşük olduğunu gördüm. Bu sebepten öncelikle bir algoritma yazmaya karar verdim. Bu algoritma effectiveCost'u hesaplıyor. Sample'ın health / totalcost oranını alıyor, elimde effectiveCost ile tüm samplelar arasından öncelikle yüksek puan veren ve costu düşük olanları almayı düşündüm. Çünkü 50 adet sample'ın içinden öncelikli olarak bunları alırsak, daha az cost ile daha çok puan kazanılabilir. 
+
+### 2.Moleküllerin effective kullanımı
+Sonrasında molekülleri de ekrana yazdırdığımda şunu gördüm; her molekülden 99 adet var. Bu molekülleri olabildiğince efektif kullanmam gerektiğini farkettim. Çünkü sampleları effectiveCost ile aldığımızda, 10 adet sample'dan sonra örneğin, 
+
+#### 50 A , 40 B , 60 C, 99 D, 99 E 
+
+kaldığını varsayalım, eğer effectiveCost ile bu şekilde devam edersek sample almaya, sonunda elimizde şu gibi bir tablo kalabiliyor:
+
+#### 0 A, 2 B, 10 C, 80 D, 96 E 
+
+Eğer bu şekilde olursa kalan sampleların içinde eğer A molekülü isteyen bir sample varsa, o zaman sample'ı labda üretemeyiz. 
+Bunu çözmek için de günlük hayatta da ATM'lerde kullanılan bir algoritma aklıma geldi.Örneğin, ATM'ye gittiğimizde 500%L çekmek istersek hepsini 100TL olarak vermez. 3 x100 TL, 2x50 TL, 2x 20TL 1x10TL gibi bu parayı bölerek verir. Bunun sebebi de kalan nakit parayı efektif kullanabilmektir. Bu algoritmayı kendi kodumuza uyarlarsak, her zaman elimizdeki AvailbleA, Available B.... hepsinin oranına göre sample seçilmeli.
+
+
+Robot tek seferde 3 sample, 10 molekül taşıyabiliyor.Sample'lardan effectiveCost'u en yüksek olanların sayısı zaten az, bu yüzden ilk olarak onları alıp, robot labda ilk olarak onları işler. (3 sample, 10 molekül ardından laboratuar). Ardından tekrar kalan sample'ları 3e tamamlar, gerekli molekülleri alır ve tekrar işler. Sonrasında effectiveCost'u 1'den küçük olan sample'larda elimizde kalan availableA, Available B... oranına göre sıradan alır. 
+
